@@ -1,0 +1,15 @@
+\documentclass{article}
+  \input{preamble/preamble.tex}
+  \input{graphics/graphics.tex}
+  \input{preamble/letter_fonts.tex}
+  \input{preamble/macros.tex}
+
+  \begin{document}
+  \include{frontpage/frontpage}
+
+  \newpage
+  \pdfbookmark[1]{\contentsname}{toc}
+  \tableofcontents \newpage
+
+  \input{chapters/chapter1}
+\end{document}
