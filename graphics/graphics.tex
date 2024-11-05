@@ -4,6 +4,8 @@
 \definecolor{myr}{RGB}{199, 68, 64}
 \definecolor{mytheorembg}{HTML}{F2F2F9}
 \definecolor{mytheoremfr}{HTML}{00007B}
+\definecolor{myalgobg}{HTML}{ffecc6}
+\definecolor{myalgofr}{HTML}{f88b00}
 \definecolor{mylenmabg}{HTML}{FFFAF8}
 \definecolor{mylenmafr}{HTML}{983b0f}
 \definecolor{mypropbg}{HTML}{f2fbfc}
@@ -285,15 +287,52 @@
 }
 {ex}
 
+%================================
+% ALGORITHM BOX
+%================================
 
+\newtcbtheorem[number within=section]{Algo}{Algorithm}
+{%
+	enhanced,
+	breakable,
+	colback = myalgobg,
+	frame hidden,
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{myalgofr},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	coltitle = myalgofr,
+	fonttitle = \bfseries\sffamily,
+	description font = \mdseries,
+	separator sign none,
+	segmentation style={solid, myalgofr},
+}
+{al}
+
+\tcbuselibrary{theorems,skins,hooks}
+\newtcolorbox{Algocon}
+{%
+	enhanced
+	,breakable
+	,colback = myalgobg
+	,frame hidden
+	,boxrule = 0sp
+	,borderline west = {2pt}{0pt}{myalgofr}
+	,sharp corners
+	,description font = \mdseries
+	,separator sign none
+}
 
 \newcommand{\thm}[2]{\begin{Theorem}{#1}{}#2\end{Theorem}}
+\newcommand{\algo}[2]{\begin{Algo}{#1}{}#2\end{Algo}}
 \newcommand{\cor}[2]{\begin{Corollary}{#1}{}#2\end{Corollary}}
 \newcommand{\mlenma}[2]{\begin{Lenma}{#1}{}#2\end{Lenma}}
 \newcommand{\mprop}[2]{\begin{Prop}{#1}{}#2\end{Prop}}
 \newcommand{\clm}[3]{\begin{claim}{#1}{#2}#3\end{claim}}
 \newcommand{\wc}[2]{\begin{wconc}{#1}{}\setlength{\parindent}{1cm}#2\end{wconc}}
 \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
+\newcommand{\algcon}[1]{\begin{Algocon}{#1}\end{Algocon}}
 \newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
 \newcommand{\dfn}[2]{\begin{Definition}[colbacktitle=red!75!black]{#1}{}#2\end{Definition}}
 \newcommand{\dfnc}[2]{\begin{definition}[colbacktitle=red!75!black]{#1}{}#2\end{definition}}
